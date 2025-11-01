@@ -31,4 +31,28 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // tampilkan data youtube
+  const dataYtUrl =
+    "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UC9kp6Tn3ILacmfsvWTQUKTw&key=AIzaSyB0n0r_lb08IBmWh0BGOzwK4Rs_h7Cki18";
+  function cekApi() {
+    fetch(`${dataYtUrl}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        document.querySelector("#video").innerHTML =
+          '<i class="fa-brands fa-youtube"></i> ' +
+          data.items[0].statistics.videoCount +
+          " video";
+        document.querySelector("#subscriber").innerHTML =
+          '<i class="fa-solid fa-users"></i> ' +
+          data.items[0].statistics.subscriberCount +
+          " subscriber";
+        document.querySelector("#view").innerHTML =
+          '<i class="fa-solid fa-eye"></i> ' +
+          data.items[0].statistics.viewCount +
+          " view";
+      });
+  }
+  cekApi();
+
 });
