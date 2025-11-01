@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // tampilkan data youtube
   const dataYtUrl =
     "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UC9kp6Tn3ILacmfsvWTQUKTw&key=AIzaSyB0n0r_lb08IBmWh0BGOzwK4Rs_h7Cki18";
-  function cekApi() {
+  function dataYt() {
     fetch(`${dataYtUrl}`)
       .then((response) => response.json())
       .then((data) => {
@@ -53,6 +53,6 @@ window.addEventListener('DOMContentLoaded', event => {
           " view";
       });
   }
-  cekApi();
+  dataYt();
 
 });
