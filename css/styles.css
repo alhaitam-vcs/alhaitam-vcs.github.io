@@ -11304,6 +11304,14 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
+@media (max-width: 486px) {
+  #subscriber,
+  #video,
+  #view {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
